@@ -81,7 +81,7 @@ function compile_vim_on_ubuntu()
 {
     sudo apt-get install -y libncurses5-dev libncurses5 \
         libgtk2.0-dev libatk1.0-dev \
-        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 lua5.1-dev
+        libcairo2-dev libx11-dev libxpm-dev libxt-dev python3-dev ruby-dev lua5.1 lua5.1-dev
 
     old_vim82=$HOME"/vim82"
     is_exist=$(is_exist_dir $old_vim)
@@ -90,12 +90,15 @@ function compile_vim_on_ubuntu()
     cd ~/vim82
     ./configure --with-features=huge \
         --enable-multibyte \
-        --enable-rubyinterp \
-        --enable-pythoninterp \
-        --enable-perlinterp \
-        --enable-luainterp \
-        --enable-gui=gtk2 \
+        --enable-python3interp \
+        # --enable-pythoninterp=yes \
         --enable-cscope \
+        --enable-gui=auto \
+        --enable-gtk2-check \
+        --enable-fontset \
+        --enable-largefile \
+        --disable-netbeans \
+        --enable-fail-if-missing \
         --prefix=/usr
     make
     sudo make install
@@ -112,6 +115,7 @@ function install_prepare_software_on_ubuntu()
 
     if [ $version -ge 18 ];then
         sudo apt-get install -y vim
+        sudo apt-get install -y vim-gnome
     else
         compile_vim_on_ubuntu
     fi
