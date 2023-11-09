@@ -226,7 +226,7 @@ function main()
     install_vimplus_on_ubuntu
 
     cd ~/.vim/plugged/YouCompleteMe
-    python3 ./install.py --clang-completer
+    python3 ./install.py --clangd-completer
 
     end=`get_now_timestamp`
     second=`expr ${end} - ${begin}`
