@@ -122,8 +122,7 @@ function install_prepare_software_on_ubuntu()
 function install_prepare_software_on_ubuntu_like()
 {
     sudo apt-get update
-    sudo apt-get install -y cmake build-essential python python-dev python3-dev fontconfig libfile-next-perl ack-grep git
-    sudo apt-get install -y universal-ctags || sudo apt-get install -y exuberant-ctags
+    sudo apt-get install -y cmake build-essential python3-dev  git
     compile_vim_on_ubuntu
 }
 
