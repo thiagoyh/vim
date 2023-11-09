@@ -79,8 +79,8 @@ function backup_vimrc_and_vim()
 # 在ubuntu上源代码安装vim
 function compile_vim_on_ubuntu()
 {
-    sudo apt-get install -y libncurses5-dev libncurses5 libgnome2-dev libgnomeui-dev \
-        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+    sudo apt-get install -y libncurses5-dev libncurses5 \
+        libgtk2.0-dev libatk1.0-dev \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 lua5.1-dev
 
     old_vim82=$HOME"/vim82"
@@ -106,16 +106,16 @@ function compile_vim_on_ubuntu()
 function install_prepare_software_on_ubuntu()
 {
     sudo apt-get update
-
+    version=$(get_ubuntu_version)
     sudo apt-get install -y cmake
-    sudo apt-get install -y build-essential python python-dev python3-dev git
+    sudo apt-get install -y build-essential python-dev python3-dev git
 
-    # if [ $version -ge 18 ];then
-    #     sudo apt-get install -y vim
-    # else
-    #     compile_vim_on_ubuntu
-    # fi
-    compile_vim_on_ubuntu
+    if [ $version -ge 18 ];then
+        sudo apt-get install -y vim
+    else
+        compile_vim_on_ubuntu
+    fi
+    # compile_vim_on_ubuntu
 }
 
 # 安装ubuntu系必备软件
