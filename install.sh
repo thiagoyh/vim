@@ -73,8 +73,6 @@ function backup_vim_dir()
 function backup_vimrc_and_vim()
 {
     backup_vimrc_file
-    backup_vimrc_custom_plugins_file
-    backup_vimrc_custom_config_file
     backup_vim_dir
 }
 
