@@ -3,6 +3,7 @@ syntax on
 filetype plugin indent on
 set backspace=2
 set number
+set nocompatible
 " set norelativenumber
 set relativenumber
 " set cursorline
