@@ -186,7 +186,6 @@ function begin_install_vimplus()
     install_fonts_on_linux
     # install_ycm
     install_vim_plugin
-    print_logo
 }
 
 # 在ubuntu上安装vimplus
