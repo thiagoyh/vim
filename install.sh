@@ -184,7 +184,7 @@ function begin_install_vimplus()
     copy_files
     install_plug
     install_fonts_on_linux
-    install_ycm
+    # install_ycm
     install_vim_plugin
     print_logo
 }
@@ -222,6 +222,9 @@ function main()
     echo "Platform type: "${type}
 
     install_vimplus_on_ubuntu
+
+    cd ~/.vim/plugged/YouCompleteMe
+    python3 ./install.py --clang-completer
 
     end=`get_now_timestamp`
     second=`expr ${end} - ${begin}`
