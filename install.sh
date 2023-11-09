@@ -177,7 +177,7 @@ function install_ycm()
     git clone https://github.com/ycm-core/YouCompleteMe.git --recursive ~/.vim/plugged/YouCompleteMe
 
     cd ~/.vim/plugged/YouCompleteMe
-    python3 ./install.py --clang-completer
+    python3 ./install.py --clangd-completer
 
 }
 
