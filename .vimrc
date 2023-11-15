@@ -170,6 +170,11 @@ au BufRead,BufNewFile *.txt setlocal noautoindent
 
 "rainbow
 let g:rainbow_active = 1
+let g:rainbow_conf = { 
+\   'separately': {
+\       'cmake': 0,
+\   }   
+\}
 let g:rainbow_colors = ['deep pink', 'chartreuse', 'gold', 'Sienna1', 'turquoise', 'RoyalBlue1', 'darkorange', 'MediumPurple1']
 
 " python syntax
